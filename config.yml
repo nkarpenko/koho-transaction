@@ -1,0 +1,8 @@
+name: Koho transacton limits validation tool
+input: ./input.txt
+output: ./output.txt
+limits:
+  daily_amount: 5000
+  weekly_amount: 20000
+  daily_transactions: 3 
+version: 0.1

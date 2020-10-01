@@ -1,0 +1,8 @@
+# vs code stuff
+.vscode
+
+# local config file
+config.local.yml
+
+# output file
+output.txt
