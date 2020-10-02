@@ -87,6 +87,6 @@ To view the reason/message as to why a transaction did not get accepted, enable 
 # Notes and Todo
 In a realistic production environment, this application would;
 * Most likely be a HTTP REST API I would assume. It would leverage mux as an http server/router.
-* rather than using a local cache variable for in memory storage, I would use a caching engine such as Redis or a nosql/sql solution to decouple data and memory storage from the application. This would also make it easier on searches vs sourting dates inside the application to enforce limits.
+* rather than using a local cache variable for in memory storage, I would use a caching engine such as Redis or a nosql/sql solution to decouple data and memory storage from the application. This would also make it easier on searches vs sorting dates inside the application to enforce limits.
 * Leverage a multi-worker based model with a queue system in place such as RabbitMQ or SQS to handle the sequence and integrity of transaction requests. The workers would poll for incoming messages, communicate with each other via channels and process the requests via go routines, being able to handle significantly more requests.
 * Leverage docker/kube for local dev and deployments. Queues, cache and db would be stand alone services while the core application and workers would be deployed into containers.
