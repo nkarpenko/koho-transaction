@@ -17,19 +17,22 @@ KOHO transaction tool technical assessment. This simple application takes user t
 ## Installation
 ### Go
 * Get all dependencies ```go get ./...```
-* Run ```go run main.go```
+* Run ```go run main.go``` to execute application.
 
 ## Usage
 ### Commands
 * Review the config file in the root folder named **config.yml**. Defaults are already set for you. 
-* To run the application, do ```go run main.go```
-* **Run with custom config file**: run ```go run main.go -c filename.yml``` e.g. ```go run main.go -c config.local.yml```
-* **Version** Get the tool version by running ```go run main.go version``` e.g.
+* To run the application, simply run ```go run main.go```
+* **Specify Config File (Optional)**: run ```go run main.go -c filename.yml``` 
+```shell
+$ go run main.go -c config.local.yml
+```
+* **Version** Get the tool version by running ```go run main.go version```
 ```shell
 $ go run main.go version
 Koho user transaction tool v0.1
 ```
-* **Limits** Get the tool limits by running ```go run main.go limits```. e.g.
+* **Limits** Get the tool limits by running ```go run main.go limits```. Limits are pulled form the config file.
 ```shell
 $ go run main.go limits
 User transaction limits:
@@ -37,7 +40,7 @@ User transaction limits:
         Max of $20000 can be loaded per week.
         Max of 3 loads per day.
 ```
-* **CLI Help** Get list of available commands and flags by running ```go run main.go help```. e.g.
+* **CLI Help** Get list of available commands and flags by running ```go run main.go help```
 ```shell
 go run main.go help     
 Koho transaction validation tool.
@@ -59,9 +62,9 @@ Use "koho-transaction [command] --help" for more information about a command.
 ```
 
 ### How to run with local config file
-* Create a local config file for example **config.local.yaml** in the root directory.
+* Create a local config file for example **config.local.yml** in the root directory.
 * This file is GIT ignored
-* Run ```go run main.go -c config.local.yaml```
+* Run ```go run main.go -c config.local.yml```
 
 ## Testing
 
