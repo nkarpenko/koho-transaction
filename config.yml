@@ -1,8 +1,13 @@
+# App details
 name: Koho transacton limits validation tool
+version: 0.1
+
+# Input and output path locations
 input: ./input.txt
 output: ./output.txt
+
+# User transaction limits
 limits:
   daily_amount: 5000
   weekly_amount: 20000
   daily_transactions: 3 
-version: 0.1

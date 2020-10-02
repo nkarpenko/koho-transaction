@@ -219,6 +219,7 @@ func timeToWeekStart(t time.Time) time.Time {
 
 // New Validator instance.
 func New(c *conf.Config) Validator {
+
 	return &validator{
 		limits: c.Limits,
 	}
