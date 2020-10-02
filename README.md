@@ -10,7 +10,8 @@ KOHO transaction tool technical assessment. This simple application takes user t
     - [Commands](#commands)
     - [How to run with local config file](#how-to-run-with-local-config-file)
   - [Testing](#testing)
-    - [Unit and Integration Tests](#unit-and-integration-tests)
+    - [Unit Tests](#unit-and-integration-tests)
+    - [Integration Tests](#integration-tests)
     - [Benchmark Tests](#benchmark-tests)
   - [Debug](#debug)
 - [Notes & TODO](#notes-and-todo)
@@ -69,17 +70,17 @@ Use "koho-transaction [command] --help" for more information about a command.
 
 ## Testing
 
-### Unit and Integration Tests
+### Unit Tests
 To run all unit and integration tests, run:
 ``` shell
 $ go test ./...
 ```
 
+### Integration Tests
+TODO
+
 ### Benchmark Tests
-To run all benchmarks, run:
-``` shell
-$ go test -bench=.
-```
+TODO
 
 ## Debug
 To view the reason/message as to why a transaction did not get accepted, enable the ```message``` var inside of ```common/model/model.go``` by changing it's json tag to ```json:"message,omitempty"``` from ```json:"-"```. 
@@ -90,3 +91,5 @@ In a realistic production environment, this application would;
 * rather than using a local cache variable for in memory storage, I would use a caching engine such as Redis or a nosql/sql solution to decouple data and memory storage from the application. This would also make it easier on searches vs sorting dates inside the application to enforce limits.
 * Leverage a multi-worker based model with a queue system in place such as RabbitMQ or SQS to handle the sequence and integrity of transaction requests. The workers would poll for incoming messages, communicate with each other via channels and process the requests via go routines, being able to handle significantly more requests.
 * Leverage docker/kube for local dev and deployments. Queues, cache and db would be stand alone services while the core application and workers would be deployed into containers.
+* Include integration tests to cover as many user scenarios as possible utilizing Go Convey or any other Go BDD library.
+* Include benchmarks within tests.

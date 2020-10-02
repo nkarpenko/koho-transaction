@@ -41,6 +41,7 @@ func TestNew(t *testing.T) {
 		},
 	}
 
+	// Run test cases.
 	for _, test := range tests {
 		tx := New(test.config)
 		if tx == nil && test.result {
@@ -102,6 +103,7 @@ func TestProcess(t *testing.T) {
 		},
 	}
 
+	// Run test cases.
 	for _, test := range tests {
 		tx := New(test.config)
 		err := tx.Process(&test.results)
