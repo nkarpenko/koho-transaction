@@ -1,5 +1,5 @@
 # KOHO Transaction Tool
-KOHO transaction tool technical assessment.
+KOHO transaction tool technical assessment. This simple application takes user transaction JSON input data, validates it based off configuration (derived from domain logic limitations), and processes those transactions to specify if they are valid or not.
 
 ## Table of Contents
 - [KOHO Transaction Tool](#koho-transaction-tool)
