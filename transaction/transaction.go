@@ -44,7 +44,7 @@ func (t *transaction) Process(res *model.Result) error {
 		return err
 	}
 
-	// Output the final results. At this point we can use the transction struct
+	// Output the final results. At this point we can use the transaction struct
 	// settings to point it to the db, redis, or return it to the user via api.
 	fmt.Println(string(json))
 
