@@ -42,7 +42,7 @@ User transaction limits:
 ```
 * **CLI Help** Get list of available commands and flags by running ```go run main.go help```
 ```shell
-go run main.go help     
+$ go run main.go help     
 Koho transaction validation tool.
 
 Usage:
