@@ -10,7 +10,7 @@ import (
 	"os"
 
 	"github.com/nkarpenko/koho-transaction/conf"
-	txmodel "github.com/nkarpenko/koho-transaction/transaction/model"
+	txmodel "github.com/nkarpenko/koho-transaction/common/model"
 )
 
 // Parser interface contains methods required to parsing input files.

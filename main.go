@@ -1,7 +1,7 @@
 package main
 
 import (
-	"log"
+	"fmt"
 
 	"github.com/nkarpenko/koho-transaction/cmd"
 )
@@ -9,7 +9,7 @@ import (
 func main() {
 	// Execute main root cobra command.
 	if err := cmd.RootCmd().Execute(); err != nil {
-		log.Printf("Unexpected error: %s\n", err.Error())
+		fmt.Printf("failed to initialize application: %s\n", err.Error())
 		return
 	}
 }

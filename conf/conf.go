@@ -1,18 +1,18 @@
 package conf
 
 import (
-	txmodel "github.com/nkarpenko/koho-transaction/transaction/model"
+	"github.com/nkarpenko/koho-transaction/common/model"
 	"github.com/spf13/viper"
 )
 
 // Config of the service.
 type Config struct {
-	Name       string          `mapstructure:"name"`
-	Desc       string          `mapstructure:"desc"`
-	InputFile  string          `mapstructure:"input"`
-	OutputFile string          `mapstructure:"output"`
-	Limits     *txmodel.Limits `mapstructure:"limits"`
-	Version    string          `mapstructure:"version"`
+	Name       string        `mapstructure:"name"`
+	Desc       string        `mapstructure:"desc"`
+	InputFile  string        `mapstructure:"input"`
+	OutputFile string        `mapstructure:"output"`
+	Limits     *model.Limits `mapstructure:"limits"`
+	Version    string        `mapstructure:"version"`
 }
 
 // Load the config file

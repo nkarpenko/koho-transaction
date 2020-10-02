@@ -6,16 +6,18 @@ import (
 
 	"github.com/nkarpenko/koho-transaction/conf"
 	"github.com/nkarpenko/koho-transaction/parser"
-	tx "github.com/nkarpenko/koho-transaction/transaction"
+	"github.com/nkarpenko/koho-transaction/transaction"
+	"github.com/nkarpenko/koho-transaction/validator"
 )
 
 var cache []int
 
 // App struct containing required application vars.
 type App struct {
-	config    *conf.Config
-	parser    parser.Parser
-	validator tx.Validator
+	config      *conf.Config
+	parser      parser.Parser
+	validator   validator.Validator
+	transaction transaction.Transaction
 }
 
 // Start the application.
@@ -32,14 +34,11 @@ func (a *App) Start() {
 	for _, tx := range *txs {
 
 		// Validate the transaction.
-		res := a.validator.Validate(&tx)
+		res := a.transaction.Validate(&tx)
 
 		// Process the transaction.
-		a.validator.ProcessTransaction(res)
+		a.transaction.Process(res)
 	}
-
-	// Final cache
-	// fmt.Printf("New cache: %+v\n\n", transaction.Cache)
 }
 
 // New app instance.
@@ -52,8 +51,9 @@ func New(c *conf.Config) (*App, error) {
 
 	// Return new app instance.
 	return &App{
-		config:    c,
-		parser:    parser.New(c),
-		validator: tx.NewValidator(c),
+		config:      c,
+		parser:      parser.New(c),
+		validator:   validator.New(c),
+		transaction: transaction.New(c),
 	}, nil
 }

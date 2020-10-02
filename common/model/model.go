@@ -19,7 +19,7 @@ type Result struct {
 	ID         int    `json:"id"`
 	CustomerID int    `json:"customer_id"`
 	Accepted   bool   `json:"accepted"`
-	Reason     string `json:"-"` // enable json field for debugging
+	Message    string `json:"-"` // enable json field for debugging
 
 	// Don't print these but keep them for cache purposes.
 	LoadAmount float64   `json:"-"`
@@ -31,7 +31,7 @@ type Output struct {
 	ID         string `json:"id"`
 	CustomerID string `json:"customer_id"`
 	Accepted   bool   `json:"accepted"`
-	Reason     string `json:"-"` // enable json field for debugging
+	Message    string `json:"-"` // enable json field for debugging
 }
 
 // Limits struct holds details on user transaction limits.
@@ -116,7 +116,7 @@ func (r *Result) MarshalJSON() ([]byte, error) {
 	res.ID = strconv.Itoa(r.ID)
 	res.CustomerID = strconv.Itoa(r.CustomerID)
 	res.Accepted = r.Accepted
-	res.Reason = r.Reason // for debugging enable it in the structs.
+	res.Message = r.Message // for debugging enable it in the structs.
 
 	// Final conversion to json string.
 	b, err := json.Marshal(res)

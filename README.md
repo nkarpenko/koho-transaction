@@ -1,5 +1,5 @@
 # KOHO Transaction Tool
-KOHO transaction tool technical assessment. This simple application takes user transaction JSON input data, validates it based off configuration (derived from domain logic limitations), and processes those transactions to specify if they are valid or not.
+KOHO transaction tool technical assessment. This simple application takes user transaction JSON input data, validates it based off configuration (derived from domain logic limitations), and processes those transactions to specify if they are valid or not. This tool leverages cobra and viper to make the executable application behave as a CLI 
 
 ## Table of Contents
 - [KOHO Transaction Tool](#koho-transaction-tool)
@@ -12,6 +12,7 @@ KOHO transaction tool technical assessment. This simple application takes user t
   - [Testing](#testing)
     - [Unit and Integration Tests](#unit-and-integration-tests)
     - [Benchmark Tests](#benchmark-tests)
+  - [Debug](#debug)
 - [Notes & TODO](#notes-and-todo)
 
 ## Installation
@@ -32,7 +33,7 @@ $ go run main.go -c config.local.yml
 $ go run main.go version
 Koho user transaction tool v0.1
 ```
-* **Limits** Get the tool limits by running ```go run main.go limits```. Limits are pulled form the config file.
+* **Limits** Get the tool limits by running ```go run main.go limits```. Limits are pulled from the config file.
 ```shell
 $ go run main.go limits
 User transaction limits:
@@ -79,6 +80,9 @@ To run all benchmarks, run:
 ``` shell
 $ go test -bench=.
 ```
+
+## Debug
+To view the reason/message as to why a transaction did not get accepted, enable the ```message``` var inside of ```common/model/model.go``` by changing it's json tag to ```json:"message,omitempty"``` from ```json:"-"```. 
 
 # Notes and Todo
 In a realistic production environment, this application would;
