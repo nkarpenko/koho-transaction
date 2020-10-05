@@ -6,7 +6,7 @@ KOHO transaction tool technical assessment. This simple application takes user t
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
     - [Go](#go)
-  - [Usage](#usage)
+  - [CLI Usage](#cli-usage)
     - [Commands](#commands)
     - [How to run with local config file](#how-to-run-with-local-config-file)
   - [Testing](#testing)
@@ -22,7 +22,7 @@ KOHO transaction tool technical assessment. This simple application takes user t
 * Get all dependencies ```go get ./...```
 * Run ```go run main.go``` to execute application.
 
-## Usage
+## CLI Usage
 ### Commands
 * Review the config file in the root folder named **config.yml**. Defaults are already set for you. 
 * To run the application, simply run ```go run main.go```
