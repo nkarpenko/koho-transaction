@@ -1,3 +1,5 @@
+// Package app holds a collection configurations, interfaces and methods
+// required to run the app/tool.
 package app
 
 import (

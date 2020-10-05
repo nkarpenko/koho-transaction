@@ -1,3 +1,4 @@
+// Package cmd holds a collection of spf13/cobra CLI Commands.
 package cmd
 
 import (

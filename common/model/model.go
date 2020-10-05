@@ -1,3 +1,4 @@
+// Package model contains a collection of application common models.
 package model
 
 import (

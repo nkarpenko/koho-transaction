@@ -1,3 +1,5 @@
+// Package conf contains a collection of structs and methods related to
+//  initializing and loading the app's base configuration variables.
 package conf
 
 import (

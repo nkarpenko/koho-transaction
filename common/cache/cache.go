@@ -1,4 +1,6 @@
-// Package cache TODO
+// Package cache currently contains the main caching variable. In a real
+// production environment, this would hold interfaces and methods related to
+// interacting with a memory store cache such as Redis.
 package cache
 
 import "github.com/nkarpenko/koho-transaction/common/model"
