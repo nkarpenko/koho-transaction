@@ -6,13 +6,14 @@ KOHO transaction tool technical assessment. This simple application takes user t
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
     - [Go](#go)
-  - [Usage](#usage)
+  - [CLI Usage](#cli-usage)
     - [Commands](#commands)
     - [How to run with local config file](#how-to-run-with-local-config-file)
   - [Testing](#testing)
-    - [Unit Tests](#unit-and-integration-tests)
+    - [Unit Tests](#unit-tests)
     - [Integration Tests](#integration-tests)
     - [Benchmark Tests](#benchmark-tests)
+  - [Documentation](#documentation)
   - [Debug](#debug)
 - [Notes & TODO](#notes-and-todo)
 
@@ -21,7 +22,7 @@ KOHO transaction tool technical assessment. This simple application takes user t
 * Get all dependencies ```go get ./...```
 * Run ```go run main.go``` to execute application.
 
-## Usage
+## CLI Usage
 ### Commands
 * Review the config file in the root folder named **config.yml**. Defaults are already set for you. 
 * To run the application, simply run ```go run main.go```
@@ -63,6 +64,11 @@ Flags:
 Use "koho-transaction [command] --help" for more information about a command.
 ```
 
+* **Have script output go to a file instead of regular stdout**
+```shell
+$ go run main.go > output.txt
+```
+
 ### How to run with local config file
 * Create a local config file for example **config.local.yml** in the root directory.
 * This file is GIT ignored
@@ -81,6 +87,19 @@ TODO
 
 ### Benchmark Tests
 TODO
+
+## Documentation
+To generate a `godoc` from the code, first make sure you have the base go tools which include godocs.
+```shell
+go get -u golang.org/x/tools/...
+```
+Generate the godoc:
+```shell
+godoc -http=:6060
+```
+
+Finally, navigate to the generated doc URL below to view package/file/interface/method docs+comments. 
+* http://localhost:6060/pkg/github.com/nkarpenko/koho-transaction/
 
 ## Debug
 To view the reason/message as to why a transaction did not get accepted, enable the ```message``` var inside of ```common/model/model.go``` by changing it's json tag to ```json:"message,omitempty"``` from ```json:"-"```. 
