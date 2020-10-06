@@ -23,16 +23,18 @@ type Result struct {
 	Message    string `json:"-"` // enable json field for debugging
 
 	// Don't print these but keep them for cache purposes.
-	LoadAmount float64   `json:"-"`
-	Time       time.Time `json:"-"`
+	LoadAmount    float64   `json:"-"`
+	Time          time.Time `json:"-"`
+	IgnoreMessage bool      `json:"-"`
 }
 
 // Output struct contains the vars and converted types for the final application output.
 type Output struct {
-	ID         string `json:"id"`
-	CustomerID string `json:"customer_id"`
-	Accepted   bool   `json:"accepted"`
-	Message    string `json:"-"` // enable json field for debugging
+	ID            string `json:"id"`
+	CustomerID    string `json:"customer_id"`
+	Accepted      bool   `json:"accepted"`
+	Message       string `json:"-"` // enable json field for debugging
+	IgnoreMessage bool   `json:"-"`
 }
 
 // Limits struct holds details on user transaction limits.

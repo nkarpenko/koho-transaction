@@ -42,12 +42,14 @@ func (v *validator) Validate(tx *model.Transaction) *model.Result {
 	res.LoadAmount = tx.LoadAmount
 	res.Time = tx.Time
 	res.Accepted = true
+	res.IgnoreMessage = false
 
 	// Confirm the transaction id is unique and hasn't been already processed.
 	// Return early if a duplicate id exists and it is not unique.
 	if res.Accepted = v.IsUniqueTransactionID(res.CustomerID, res.ID); !res.Accepted {
 		// Provide failure Message for debug.
 		res.Message = "transaction id is not unique for customer, ignoring"
+		res.IgnoreMessage = true
 		return res
 	}
 

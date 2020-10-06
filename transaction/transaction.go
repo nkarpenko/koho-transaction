@@ -30,6 +30,11 @@ type transaction struct {
 // against.
 func (t *transaction) Process(res *model.Result) error {
 
+	// If transaction is set to ignore, dont do anything.
+	if res.IgnoreMessage {
+		return nil
+	}
+
 	// Add transaction to cache.
 	(*cache.Cache)[res.CustomerID] = append((*cache.Cache)[res.CustomerID], *res)
 
